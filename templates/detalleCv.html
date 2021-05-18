@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <div>
+       <h2> {{ objeto.nombre }}   </h2>
+       <p>  {{ objeto.apellido }} </p>
+   </div>
+
+          <p> <a href="{% url 'editarCv' objeto.pk %}"> Editar curriculumn </a></p> 
+          <p> <a href="{% url 'eliminarCv' objeto.pk %}"> Eliminar curriculumn </a></p>
+
+{% endblock content %}  

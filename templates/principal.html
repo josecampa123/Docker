@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for objeto in jose %}
+        <div>
+            <h2> <a href="{% url 'detalleCv' objeto.pk %}"> {{objeto.nombre}}</a></h2>
+                                                        <p> {{objeto.apellido}}    </p>
+                                                        <p> {{objeto.telefono}}    </p>
+                                                        <p> {{objeto.corro}}       </p>
+                                                        <p> {{objeto.formacion}}   </p>
+                                                        <p> {{objeto.experiencia}} </p>
+        </div>
+
+    {% endfor %}
+{% endblock content %}
