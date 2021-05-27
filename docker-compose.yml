@@ -2,6 +2,8 @@ services:
     web:
         build: .
         command: python /code/manage.py runserver 0.0.0.0:8000
+        environment: 
+            - EMAIL_HOST_USER=campaabraham@gmail.com
         volumes:     
             - .:/code
         ports:
@@ -14,7 +16,12 @@ services:
            - postgres_data:/var/lib/postgresql/data
         environment: 
             POSTGRES_DB: "db"
+            POSTGRES_PASSWORD: postgres
+            PASSWORD_USSER: postgres
             POSTGRES_HOST_AUTH_METHOD: "trust"
+        ports:
+            - 5432:5432
 volumes:
     postgres_data:
+
       

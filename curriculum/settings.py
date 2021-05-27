@@ -79,7 +79,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'PORT': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST':'db',
@@ -131,10 +130,25 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 LOGIN_REDIRECT_URL = 'principal'
 LOGOUT_REDIRECT_URL = 'principal'
 
+#EMAIL_BACKEND = 'django.core.mail.hackends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#from decouple import config
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+#EMAIL_PORT = os.environ.get('PORT_EMAIL', cast = int)
+EMAIL_HOST_USER = 'campaabraham@gmail.com'
+EMAIL_HOST_PASSWORD = 'Campacampa123.'
+EMAIL_USE_TLS = True
+
+#EMAIL_HOST_USER = config('USER_MAIL')
+
+
+
 #AUTH_USER_MODEL = 'cuentas.UsuarioPers'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

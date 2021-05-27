@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="static/css/img/cliente.jpg">
+                    <div class="card-block">
+                        <h4 class="card-title"> Datos personales del clinete </h4>
+                        
+                        <div class="meta">
+                        </div>              
+</div>
+    
+</body>
+</html>
+{% for cliente in cliente %}
+<dt>Nombre:   <a href="{% url 'detalleCliente' cliente.pk %}">    {{ cliente.nombre}}</a> </dt>
+<dt>Email:    <a href="{% url 'detalleCliente' cliente.pk %}">    {{ cliente.email}}</a> </dt>
+<dt>Contacto: <a href="{% url 'detalleCliente' cliente.pk %}">    {{ cliente.contacto}}</a> </dt>
+
+{% endfor %}
+
+{% endblock content %}
