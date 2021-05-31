@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    {{ objeto.nombre }}
-   <h1> editar curriculum </h1>
+    {{ cliente.nombre }}
+   <h1> editar cliente </h1>
    <form action="" method="post"> {% csrf_token %}
       {{ form.as_p }}
       <input type="submit" value="Actualizar">

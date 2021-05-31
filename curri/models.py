@@ -7,10 +7,13 @@ class Evento(models.Model):
     nombre = models.CharField(max_length=200)
     fecha = models.DateField()
     ciudad = models.CharField(max_length=200)
-    ubicacion = models.CharField
   
     def __str__(self):
         return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('detalleEvento',args=[self.id])
+
 
 class Cliente(models.Model):
     nombre = models.CharField(max_length=200)
@@ -24,6 +27,9 @@ class Cliente(models.Model):
     )
     def __str__(self):
         return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('detalleCliente',args=[self.id])
 
 
 class Cv(models.Model):

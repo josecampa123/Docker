@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+   <h1> Eliminar cliente </h1>
+   <form action="" method="post"> {% csrf_token %}
+       <p>Seguro que desaeas eliminar el Cliente: "{{ cliente.nombre }}"</p>
+       <input type="submit" value="Confirmar">
+    </form>
+{% endblock content %}

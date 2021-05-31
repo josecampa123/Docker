@@ -5,5 +5,6 @@
     <p>  {{ cliente.email }} </p>
     <p>  {{ cliente.contacto }} </p>   
 </div>
-
+     <p> <a href="{% url 'editarCliente' cliente.pk %}"> Editar cliente </a></p> 
+     <p> <a href="{% url 'eliminarCliente' cliente.pk %}"> Eliminar cliente </a></p> 
 {% endblock content %}  
